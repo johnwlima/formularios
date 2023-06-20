@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>formulário 01</title>
+</head>
+
+<body>
+
+	<!-- 
+		nome: identifica
+		id: usado para tomar ação no backend
+		value: é o que vai chegar no servidor é o que vai chegar ao servidor
+		type: o tipo de imput (text, button ...)
+
+		disable: desabilita
+		readonly: pode ver mas não editar
+		autocomplete: autocompleta o texto com base no que já foi digitado
+		placeholder: instrução de uso do imput
+		checkd: já vem marcado
+
+		type= "reset" // reseta os campos ao padrão
+		type= "submit" // enviar (pode ser usado com a tag button)
+		type= "checkbox" // check
+		type= "radio" // precisam ter o mesmo name
+		type= "date" // data
+		type= "datetime" //as vezes não funciona, alguns navegadores não suportam (caso use value seguir formatação 2020-04-20)
+		type= "datetime-local" //data + hora (caso use value seguir formatação 2020-04-20T20:00)
+		type= "time" // hora (24h formatação: 20:00 caso coloque 00:00:00 aparecem os segundos)
+		type= "color" // value = hex
+		type= "email" //validão de email
+		type= "file" // qualquer tipo de arquivo
+		accept= ".png" //pra dizer quais arquivos aceita (as vezes não funciona) image/* (aceita qualquer imagem)
+		multiple // permite multiplos arquivos para o type file
+		type= "number" //
+		min= "10" max= "50" step= "5" // numero mínimo e máximo de caracteres step (quantidade de vezes que o numero pula nas setas)
+
+		type= "password" // input de password, a senha não aparece
+		type= "range" // pode ter minimo, máximo, step, label (pesquisar MDN)
+		type= "url" // aceita formato de url
+		type= "search" // semantica de pesquisa
+	 -->
+    <form action="#" method="get" target="_blank">
+		<p>O meu formulário</p>
+		<p><input type="text" value="" id="nome"
+			 name="nome" placeholder="Seu nome"></p>
+    </form>
+
+
+	<!-- select // funciona para selecionar opções, é possível usar o optgroup para agrupar
+		opções.
+		option tag é para dizer as opções que são selecionáveis
+		selected // é possível usar selected para marcar uma opção selecionada como default
+		multiple // é possível selecionar vários ao mesmo tempo
+	-->
+	<p>
+		<label for="select">
+			<select id="select" name="select">
+				<optgroup label="teste">
+					<option value="qualquer1" label="label1">
+					<option value="qualquer2" label="label2">
+					<option value="qualquer3" label="label3" selected>
+				</optgroup>
+			</select>
+		</label>
+	</p>
+
+
+	<p>
+		<label for="textarea">textarea:</label>
+		<textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+
+	</p>
+</body>
+
+</html>

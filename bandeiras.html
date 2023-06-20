@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário com DDD, Bandeiras e Número de WhatsApp</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-container label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-container input,
+    .form-container select {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+    }
+
+    .form-container button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .form-container button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .phone-field {
+      display: flex;
+      align-items: center;
+    }
+
+    .phone-field select {
+      width: 70px;
+      margin-right: 5px;
+    }
+
+    .flag-icon {
+      width: 20px;
+      height: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Formulário</h2>
+    <form>
+      <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="phone-field">
+        <label for="phone">Telefone:</label>
+        <select id="ddd" name="ddd">
+          <option value="55">+55 (BR)</option>
+          <!-- Adicione outras opções de DDD aqui -->
+        </select>
+        <input type="text" id="phone" name="phone" pattern="[0-9]{9}" title="Digite um número de telefone válido de 9 dígitos" required>
+        <img class="flag-icon" id="flag" src="" alt="Bandeira">
+      </div>
+      <div>
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const dddSelect = document.getElementById('ddd');
+    const flagImg = document.getElementById('flag');
+
+    dddSelect.addEventListener('change', () => {
+      const countryCode = dddSelect.value;
+      flagImg.src = `https://www.countryflags.io/${countryCode.slice(1, 3)}/flat/64.png`;
+    });
+  </script>
+</body>
+</html>
