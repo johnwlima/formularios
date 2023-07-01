@@ -18,7 +18,7 @@ section{
     height: 100vh;
 }
 
-form{
+form {
     font-family: sans-serif;
 }
 
@@ -40,10 +40,11 @@ form input:focus, form textarea:focus{
     background-color: wheat;
 }
 
-form input[type=submit]{
+form input[type=submit] {
     background-color: cornflowerblue;
     color: white;
     cursor: pointer;
+    width: 100%;
 }
 
 .card{
@@ -54,4 +55,3 @@ form input[type=submit]{
     display: flex;
     flex-direction: column;
 }
-
